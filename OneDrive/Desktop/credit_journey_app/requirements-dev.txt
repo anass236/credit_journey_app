@@ -1,0 +1,2 @@
+-r requirements.txt
+mini-racer==0.14.1

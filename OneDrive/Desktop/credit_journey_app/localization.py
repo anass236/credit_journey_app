@@ -1,0 +1,83 @@
+"""French presentation labels. Stored identifiers and user-authored content stay intact."""
+
+DEFAULT_TEXT = {
+    'Awareness & acquisition': 'Découverte et acquisition',
+    'Customer discovers our credit offer and enters the funnel.': 'Le client découvre notre offre de crédit et commence son parcours.',
+    'Credit simulation': 'Simulation de crédit',
+    'Customer estimates installments and checks affordability.': 'Le client estime ses mensualités et vérifie sa capacité de remboursement.',
+    'Application submission': 'Dépôt de la demande',
+    'Customer provides identity, financial details, and consent.': 'Le client renseigne son identité, ses informations financières et son consentement.',
+    'Identity & fraud checks': 'Vérification d’identité et de fraude',
+    'Verify identity, basic eligibility, and potential fraud signals.': 'Vérifier l’identité, les critères d’éligibilité et les éventuels indices de fraude.',
+    'Credit decision': 'Décision de crédit',
+    'Review creditworthiness and issue a decision.': 'Évaluer la solvabilité du client et rendre une décision.',
+    'Offer & e-signature': 'Offre et signature électronique',
+    'Present terms and capture agreement.': 'Présenter les conditions de l’offre et recueillir l’accord du client.',
+    'Funding': 'Déblocage des fonds',
+    'Release approved funds and communicate completion.': 'Débloquer les fonds accordés et informer le client de la finalisation.',
+    'Servicing & support': 'Gestion et assistance',
+    'Manage payments, account requests, and assistance.': 'Gérer les remboursements, les demandes liées au compte et l’assistance.',
+    'Marketing': 'Marketing',
+    'Digital & UX': 'Numérique et expérience utilisateur',
+    'Sales': 'Équipe commerciale',
+    'Credit Risk': 'Risque de crédit',
+    'Compliance': 'Conformité',
+    'Operations': 'Opérations',
+    'Customer Service': 'Service client',
+    'IT & Data': 'Informatique et données',
+}
+
+ERRORS = {
+    'Équipe parente introuvable.': 'Équipe parente introuvable.',
+    'Sous-équipe introuvable.': 'Sous-équipe introuvable.',
+    'Macro-étape introuvable.': 'Macro-étape introuvable.',
+    'Une équipe peut contenir au maximum 100 sous-équipes.': 'Une équipe peut contenir au maximum 100 sous-équipes.',
+    'Unknown browser asset.': 'Ressource de l’application inconnue.',
+    'Too many requests. Try again later.': 'Trop de requêtes. Veuillez réessayer plus tard.',
+    'Not found.': 'Ressource introuvable.',
+    'Cross-origin changes are not allowed.': 'Les modifications provenant d’un autre site ne sont pas autorisées.',
+    'Please sign in.': 'Veuillez vous connecter.',
+    'Only administrators can change the journey or manage accounts.': 'Seuls les administrateurs peuvent modifier le parcours ou gérer les comptes.',
+    'Your session has changed. Reload the page and try again.': 'Votre session a changé. Actualisez la page, puis réessayez.',
+    'Invalid request.': 'Demande invalide.',
+    'Method not allowed.': 'Action non autorisée.',
+    'Request is too large.': 'La requête est trop volumineuse.',
+    'Use a JSON object with application/json.': 'Envoyez un objet JSON avec le type de contenu application/json.',
+    'Request rejected.': 'Requête refusée.',
+    'Invalid or duplicate record.': 'Enregistrement invalide ou déjà existant.',
+    'Service temporarily unavailable. Try again.': 'Le service est momentanément indisponible. Veuillez réessayer.',
+    'An unexpected server error occurred.': 'Une erreur interne est survenue. Réessayez ou contactez votre administrateur.',
+    'Account credentials changed. Sign in again.': 'Les identifiants du compte ont changé. Veuillez vous reconnecter.',
+    'First-run setup is only available locally before production hosting.': 'La configuration initiale est uniquement disponible en local, avant la mise en production.',
+    'Setup is complete. Ask an administrator to create your account.': 'La configuration est terminée. Demandez à un administrateur de créer votre compte.',
+    'Invalid login details.': 'Les informations de connexion sont invalides.',
+    'Invalid username or password.': 'Identifiant ou mot de passe incorrect.',
+    'Too many sign-in attempts. Try again in 15 minutes.': 'Trop de tentatives de connexion. Veuillez réessayer dans 15 minutes.',
+    'Only administrators can manage accounts.': 'Seuls les administrateurs peuvent gérer les comptes.',
+    'That username is already in use.': 'Cet identifiant est déjà utilisé.',
+    'Current password is incorrect.': 'Le mot de passe actuel est incorrect.',
+    'Your password changed. Sign in again.': 'Votre mot de passe a changé. Veuillez vous reconnecter.',
+    'Provide an access role or disabled status.': 'Indiquez un rôle ou un état d’activation du compte.',
+    'Account not found.': 'Compte introuvable.',
+    'Disabled status must be true or false.': 'L’état de désactivation doit être une valeur booléenne.',
+    'Keep at least one active administrator.': 'Au moins un administrateur doit rester actif.',
+    'Only administrators can review security events.': 'Seuls les administrateurs peuvent consulter les événements de sécurité.',
+    'Workspace capacity reached. Contact your administrator.': 'La capacité de l’espace de travail est atteinte. Contactez votre administrateur.',
+    'An assigned team does not exist.': 'L’une des équipes sélectionnées n’existe pas.',
+    'Invalid stage details.': 'Les informations de l’étape sont invalides.',
+    'Invalid or duplicate stage.': 'Étape invalide ou déjà existante.',
+    'Stage not found.': 'Étape introuvable.',
+    'Invalid position.': 'Position invalide.',
+    'This team already exists.': 'Cette équipe existe déjà.',
+    'Team not found.': 'Équipe introuvable.',
+    'Invalid or duplicate connection. Check the stages and line style.': 'Liaison invalide ou déjà existante. Vérifiez les étapes et le style du trait.',
+    'Connection not found.': 'Liaison introuvable.',
+}
+
+
+def display_text(value):
+    return DEFAULT_TEXT.get(value, value)
+
+
+def error_text(value):
+    return ERRORS.get(value, value)

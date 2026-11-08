@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf }}">
+  <title>{{ 'Créer le compte administrateur' if setup else 'Connexion' }} · CreditFlow</title>
+  <link rel="stylesheet" href="{{ asset_url('styles.css') }}">
+  <link rel="stylesheet" href="{{ asset_url('access.css') }}">
+  <script defer src="{{ asset_url('login.js') }}"></script>
+</head>
+<body class="auth-page">
+  <main class="auth-card">
+    <div class="brand auth-brand"><div class="brand-mark">↗</div><div><strong>CreditFlow</strong><small>PARCOURS DE CRÉDIT</small></div></div>
+    <div class="eyebrow">{{ 'CONFIGURATION INITIALE' if setup else 'VOTRE ESPACE DE TRAVAIL' }}</div>
+    <h1>{{ 'Créer votre compte administrateur' if setup else 'Bienvenue' }}</h1>
+    <p>{{ 'Créez le premier compte administrateur. Vous pourrez ensuite ajouter des comptes lecteurs depuis votre espace de travail.' if setup else 'Connectez-vous pour consulter votre parcours de crédit. Votre rôle détermine les actions autorisées.' }}</p>
+    <form id="authForm" data-setup="{{ 'true' if setup else 'false' }}">
+      <label class="field-label">Identifiant
+        <input name="username" id="username" autocomplete="username" required minlength="3" maxlength="50" pattern="[A-Za-z0-9_.\-]{3,50}" autofocus>
+      </label>
+      <label class="field-label">Mot de passe
+        <input name="password" id="password" type="password" autocomplete="{{ 'new-password' if setup else 'current-password' }}" required {% if setup %}minlength="12"{% endif %} maxlength="128">
+        {% if setup %}<small>Utilisez au moins 12 caractères.</small>{% endif %}
+      </label>
+      {% if setup %}<label class="field-label">Confirmer le mot de passe<input id="confirmPassword" type="password" autocomplete="new-password" required minlength="12" maxlength="128"></label>{% endif %}
+      <p class="form-error" id="authError" role="alert" hidden></p>
+      <button class="btn btn-primary full-width" id="authSubmit" type="submit">{{ 'Créer le compte administrateur' if setup else 'Se connecter' }} ↗</button>
+    </form>
+    <p class="auth-footnote">{{ 'Le premier compte est administrateur. Seul un administrateur peut créer les comptes suivants.' if setup else 'Besoin d’un compte ? Contactez l’administrateur de votre espace de travail.' }}</p>
+  </main>
+</body>
+</html>
